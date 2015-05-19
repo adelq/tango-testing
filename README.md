@@ -1,49 +1,41 @@
-tango-testing
-=============
+This repository holds the sources to LibreOffice's vector-based icon themes.
 
-Updated Tango-compatible Icon Theme for LibreOffice
+Contact us on our mailing list if you want to contribute.
 
-Contact us if you want to contribute -- we need to add you to the repository.
+GUIDELINES
+----------
+READ GUIDELINES.md BEFORE CONTRIBUTING!
 
-SPARKLESHARE
-------------
-To set up SparkleShare, go to your Account Settings on GitHub (the "Tools" icon next to your username), go to SSH keys, and copy over the text from the file in your SparkleShare folder.
+LICENSE
+-------
+See the LICENSE file in this folder for the licensing details.
+
+By submitting your work, you grant us an irrevocable permission to publish it under the licenses specified in that file.
+
+Don't forget to add yourself to the AUTHORS file -- otherwise, your changes are considered as public domain and you are not contacted if the set is relicensed!
 
 INKSCAPE
 --------
 Please use Inkscape to design the icons. Icon export depends on Inkscape-specific labels.
+
 You can download Inkscape for free from http://inkscape.org/
 
-SHAPE DESIGN
+SPARKLESHARE
 ------------
-Principles
-==========
-* Align to a 1px-grid whenever possible. Make sure the grid (#) and snapping (%) is on in Inkscape.
-* Leave a 1px margin in the 24px icons. Don't leave a margin in the 16px icons.
-* If in doubt, refer to the Tango icon guidelines: http://tango.freedesktop.org/Tango_Icon_Theme_Guidelines
+You can use SparkleShare to automatically push your changes to git, if you'd like to.
 
-Drawing a 2D Shape Icon
-=======================
-1. Draw the shape and apply the shapeFill gradient to it in the Fill sidebar (Ctrl+Shift+F). Make sure it has no stroke.
-2. Duplicate the shape twice (Ctrl+D, Ctrl+D).
-3. Add a 2px stroke to the topmost duplicate.
-4. Convert its stroke to a path (Ctrl+Alt+C).
-5. Select this path and the shape below it and do an intersection (Ctrl+*). You should now have the "shape outline".
-6. Make the "shape outline" black with 40% opacity.
-7. Duplicate the main shape twice again (Ctrl+D, Ctrl+D).
-8. Add a 4px stroke to the topmost duplicate.
-9. Convert this stroke to a path (Ctrl+Alt+C).
-10. Select this path and the shape below it and do an intersection (Ctrl+*). I'll call the result the "shape inset".
-11. Duplicate the "shape outline" from step 6 (Ctrl+D) and move this duplicate to the top.
-12. Select this duplicate and the "shape inset" and do a difference. (Ctrl+-). Let's call the result the "shape highlight".
-13. Apply the highlight gradient fill to it and make it 40% opaque.
+To set up SparkleShare, go to your Account Settings on GitHub (the "Tools" icon next to your username), go to SSH keys, and copy over the text from the file in your SparkleShare folder.
 
-If the shape contains inner elements (e.g. the Smiley shape):
-1. Draw the inner elements after you've completed the process above.
-2. Add the elements (Ctrl++). I'll call the result the "inner path".
-3. Duplicate this "inner path" (Ctrl+D). Let's call this duplicate the "inner path highlight".
-4. Move this "inner path highlight" down 1px.
-5. Add the "inner path highlight" to the "shape highlight". Let's call the result the "highlight".
-6. Add the "inner path" to the "shape outline" (Ctrl++). Let's call the result the "outline".
-7. Duplicate the "outline" (Ctrl+D).
-8. Select this duplicate and do a difference (Ctrl+-) with the "highlight".
+MAINTAINERS
+-----------
+Each icon sheet has a maintainer that takes care of that particular sheet, listed in MAINTAINERS.md. If you'd like to work on icons, write to the LibreOffice Design Redmine forum.
+
+FINDING ICONS
+-------------
+To find an icon, open a terminal in this git folder and run git grep '<icon name>' (e.g. git grep 'lc_bold'). If the icon is only under links.txt, search for the icon listed on the same line in that file. If the icon is in an icon sheet, open up that sheet, press "Ctrl + F" and enter the icon name in the "ID" text box.
+
+ADDING ICONS
+------------
+You may add icons for newly-introduced functions that don't have an icon in LibreOffice.
+
+If it is not newly-introduced, it should be present already or it is listed under missing.md or links.txt. If it's listed under missing.md, add it to the correct sheet (as a rectangle under the layer named after the folder it's in) and remove it from missing.md. Also add the new icon to the galaxy theme, otherwise it won't show up in the UI. If it's not there, write to the design mailing list, to check whether it hasn't been simply removed, but accidentally left some tracks.
